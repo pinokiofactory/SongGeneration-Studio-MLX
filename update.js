@@ -13,8 +13,9 @@ module.exports = {
       when: "{{exists('app')}}",
       method: "shell.run",
       params: {
-        venv: "env",
-        message: "pip install -r app/requirements_mlx.txt"
+        path: "app",
+        venv: "../env",
+        message: "pip install -r requirements_mlx.txt"
       }
     }
   ]

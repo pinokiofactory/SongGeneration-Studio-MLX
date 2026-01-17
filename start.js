@@ -12,8 +12,8 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "env",
         path: "app",
+        venv: "../env",
         message: "python main.py --host 127.0.0.1 --port {{local.port}}",
         on: [
           {
