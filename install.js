@@ -20,15 +20,6 @@ module.exports = {
       }
     },
     {
-      when: "{{!exists('app/ckpt/vae/autoencoder_music_1320k.npz')}}",
-      method: "shell.run",
-      params: {
-        path: "app",
-        venv: "../env",
-        message: "python tools/fetch_runtime.py --local-dir ."
-      }
-    },
-    {
       method: "shell.run",
       params: {
         path: "app",
