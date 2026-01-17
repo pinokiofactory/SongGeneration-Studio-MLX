@@ -10,15 +10,25 @@ module.exports = {
       }
     },
     {
-      when: "{{!exists('env')}}",
+      when: "{{!exists('env/.sg_installed')}}",
       method: "shell.run",
       params: {
         path: "app",
         venv: "../env",
         message: [
           "python -m pip install --upgrade pip",
-          "pip install -r requirements.txt"
+          "pip install -r requirements.txt",
+          "python -c \"from pathlib import Path; Path('../env/.sg_installed').touch()\""
         ]
+      }
+    },
+    {
+      when: "{{!exists('app/ckpt/vae/stable_audio_1920_vae.json')}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "../env",
+        message: "python tools/fetch_runtime.py --local-dir ."
       }
     },
     {

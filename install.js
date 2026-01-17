@@ -18,6 +18,23 @@ module.exports = {
           "pip install -r requirements.txt"
         ]
       }
+    },
+    {
+      when: "{{!exists('app/ckpt/vae/stable_audio_1920_vae.json')}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "../env",
+        message: "python tools/fetch_runtime.py --local-dir ."
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "../env",
+        message: "python -c \"from pathlib import Path; Path('../env/.sg_installed').touch()\""
+      }
     }
   ]
 }
