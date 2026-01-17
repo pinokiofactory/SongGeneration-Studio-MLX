@@ -1,0 +1,19 @@
+{
+  "title": "SongGeneration Studio MLX",
+  "description": "Pinokio launcher for the MLX-only SongGeneration Studio.",
+  "icon": "icon.png",
+  "links": [
+    {
+      "title": "App Repo",
+      "value": "https://github.com/CharafChnioune/SongGeneration-Studio-MLX"
+    },
+    {
+      "title": "Launcher Repo",
+      "value": "https://github.com/pinokiofactory/SongGeneration-Studio-MLX"
+    },
+    {
+      "title": "Hugging Face Models",
+      "value": "https://huggingface.co/AITRADER/SongGeneration-Large-MLX"
+    }
+  ]
+}
