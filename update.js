@@ -15,7 +15,7 @@ module.exports = {
       params: {
         path: "app",
         venv: "../env",
-        message: "pip install -r requirements_mlx.txt"
+        message: "pip install -r requirements.txt"
       }
     }
   ]
