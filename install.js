@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     {
-      when: "{{!exists('app/ckpt/vae/stable_audio_1920_vae.json')}}",
+      when: "{{!exists('app/ckpt/vae/autoencoder_music_1320k.npz')}}",
       method: "shell.run",
       params: {
         path: "app",

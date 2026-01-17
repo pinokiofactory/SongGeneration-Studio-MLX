@@ -3,6 +3,14 @@ module.exports = {
   daemon: true,
   run: [
     {
+      when: "{{exists('app/.git')}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        message: "git pull"
+      }
+    },
+    {
       when: "{{!exists('app')}}",
       method: "shell.run",
       params: {
@@ -23,7 +31,7 @@ module.exports = {
       }
     },
     {
-      when: "{{!exists('app/ckpt/vae/stable_audio_1920_vae.json')}}",
+      when: "{{!exists('app/ckpt/vae/autoencoder_music_1320k.npz')}}",
       method: "shell.run",
       params: {
         path: "app",
